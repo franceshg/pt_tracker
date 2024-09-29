@@ -1,0 +1,61 @@
+extends layout
+
+block main
+  seciont#client
+    h2 #{client.name}
+      h5 Client Since: #{client.start_date}
+      h3 Notes: 
+        ul#notes
+          if client.notes === null || client.notes.length === 0
+            li
+              p There are currently no notes for this client
+          else
+            li
+              p #{client.notes}
+        ul
+          li
+            form(action=`/${client.id}/edit` method="get")
+              button.links(type="submit") Edit Client
+  section#goals
+    form(action=`/${client.id}/add_goal` method="post")
+      dl
+        dt
+          label(for="newGoal") Enter a new Goal:
+        dd  
+          input(type="text"
+                name="newGoal"
+                placeholder="New Goal"
+                value=newGoalName)
+      fieldset.actions
+        button.addGoal Add
+        
+    h3 Goals:
+      each goal in client.goals
+        a.linkToGoal(href=`/${client.id}/${goal.id}/edit_goal`)
+          ul#goals
+            li.title(class=goal.done ? "done" : "")
+              p #{goal.title}
+            li.notes(class=goal.done ? "done" : "") 
+              p Notes:
+                p #{goal.notes}
+            li.created_on(class=goal.done ? "done" : "")
+              p Created On:
+                p #{goal.created_on.toDateString()}
+            li.goalToggle
+              form.check(action=`/${client.id}/${goal.id}/toggle` method="post")
+                input(type="hidden" name="done" value=!goal.done)
+                button.done #{goal.done ? "Undo" : "Mark Done"}
+    if client.goals.length > 0
+      ul.pagination 
+        if(page > 1)
+          a(href=`/${client.id}/?page=${+page-1}`)
+            button.links <
+        p page #{page} / #{totalPages}
+        if(page < totalPages)
+          a(href=`/${client.id}/?page=${page+1}`)
+            button.links >
+    
+block headerLinks
+  .actions
+    a(href=`/`)
+      button.links Go back to Clients List

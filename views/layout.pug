@@ -1,0 +1,31 @@
+doctype html
+
+html(lang="en-US")
+
+  head
+    title PT Tracker
+    meta(charset="UTF-8")
+    link(rel="stylesheet" href="/stylesheets/application.css")
+    script(src="/javascripts/application.js")
+
+  body
+    header
+      h1 PT Tracker
+      block headerLinks
+
+    main
+      - let kinds = Object.keys(flash || {});
+      if kinds.length > 0
+        ul
+          each kind in kinds
+            each message in flash[kind]
+              li.flash(class=kind)= message
+
+      block main
+    
+    footer
+      block signOut
+        form(action="/users/signout" method="post")
+          fieldset.actions
+            p Signed in as #{username}.
+            button.signOut Sign Out

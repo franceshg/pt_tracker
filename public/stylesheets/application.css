@@ -1,0 +1,259 @@
+ul {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+p {
+  color: #e7a117;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+p.inlineText {
+  display: inline;
+  margin-right: 20px;
+}
+
+body {
+  background-color: #222832;
+  color: #c57f1e;
+  font: normal 20px "PT Sans", Helvetica, Arial, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+body > header {
+  margin: 0 40px;
+  padding: 55px 0 35px;
+  text-align: center;
+}
+
+body > header h1 {
+  color: #c57f1e;
+  display: inline-block;
+  font-size: 30px;
+  width: 38%;
+}
+
+main {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+main > form,
+footer > form {
+  margin-top: 1.5rem;
+}
+
+form dt {
+  padding: 0 0 25px;
+}
+
+form dd {
+  padding: 0 0 15px;
+}
+
+dd {
+  margin-inline-start: 0px;
+}
+
+div.actions {
+  text-align: right;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  border: 1px solid #a4a4a4;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font: normal 20px "PT Sans", Helvetica, Arial, sans-serif;
+  height: 58px;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+form input[type="submit"],
+form fieldset button,
+a.action {
+  background-color: #c57f1e;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font: normal 24px "PT Sans", Helvetica, Arial, sans-serif;
+  margin: 0 40px 0 0;
+  padding: 12px 45px;
+}
+
+form input[type="submit"]:hover,
+button.signOut:hover,
+button.addGoal:hover,
+a.action:hover {
+  background-color: #e7a117;
+  cursor: pointer;
+}
+
+a.linkToClient:hover,
+a.linkToGoal:hover {
+    transition: all .1s ease;  
+}
+
+.flash {
+  background-color: #cbe5f2;
+  color: #3399cc;
+  margin: 20px 0 1.5rem;
+  max-width: 1000px;
+  padding: 10px 20px;
+}
+
+.flash.error {
+  background-color: #ffcfbf;
+  color: #ff6633;
+}
+
+.flash.success {
+  background-color: #cbf2e5;
+  color: #33cc99;
+}
+
+
+#clients a {
+  color: inherit;
+  display: block;
+  overflow: hidden;
+}
+
+#notes li,
+#goals li {
+  color: inherit;
+  display: block;
+  overflow: hidden;
+}
+
+#notes p,
+#goals p {
+  color: #e7a117;
+  font-size: 0.9rem;
+}
+
+#clients h2,
+#notes h2,
+#goals h2 {
+  float: left;
+  width: 95%;
+}
+
+
+#clients p {
+  color: #e7a117;
+  float: right;
+  font-size: 0.9rem;
+  text-align: right;
+  width: 5%;
+}
+
+#clients li,
+#notes li {
+  background-color: #2f3847;
+  border-radius: 8px;
+  margin: 0 0 10px;
+  padding: 18px 25px 18px 57px;
+  position: relative;
+}
+
+#goals ul {
+    background-color: #2f3847;
+  border-radius: 8px;
+  margin: 0 0 10px;
+  padding: 18px 25px 18px 57px;
+  position: relative;
+}
+
+button.links,
+button.done {
+
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #ff5000;
+  line-height: 1.15;
+  font-size: 16px;
+}
+                
+button.links:hover {
+  transition: all .1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #e7a117;
+}
+
+button.done:hover {
+  background-color: #e7a117;
+  cursor: pointer;
+}
+
+#goals {
+  whitespace: nowrap;
+  overflow: hidden;
+}
+
+#goals li.title {
+  width: 30%;
+  display: inline-block;
+}
+
+#goals li.notes {
+  width: 40%;
+  display: inline-block;
+}
+
+#goals li.goalToggle {
+  width: 15%;
+  display: inline-block;
+}
+
+#goals li.created_on {
+  width: 15%;
+  display: inline-block;
+}
+
+#edit_goal {
+  display: inline-block;
+  width: 85%;
+}
+
+form.delete {
+  display: inline-block;
+}
+
+fieldset.actions {
+  display: inline-block;
+}
+
+#goals li.done {
+  text-decoration: line-through;
+  color: #bebebe;
+}
+
+a.action {
+  text-decoration: none;
+}
+
+ul.pagination {
+  text-align: center;
+}
+
+ul.pagination a {
+  display: inline-block;
+}
+
+ul.pagination p {
+  display: inline-block;
+  width: 20%;
+}

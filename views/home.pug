@@ -1,0 +1,30 @@
+extends layout
+
+block main
+  if clientList === undefined || clientList.length === 0
+    p Your client list is empty.
+  else
+    ul#clients
+      each client, clientIndex in clientList
+        - let clientInfo = clientsInfo[clientIndex]
+        li
+          a.linkToClient(href=`/${client.id}`)
+            h2= client.name
+            p Goals:
+            p #{clientInfo.countDoneGoals} / #{clientInfo.countAllGoals}
+  
+    ul.pagination 
+      if(page > 1)
+        a(href=`/?page=${+page-1}`)
+          button.links <
+      p page #{page} / #{totalPages}
+      if(page < totalPages)
+        a(href=`/?page=${page+1}`)
+          button.links >
+
+          
+block headerLinks
+  .actions
+    p.inlineText Add New Client
+    a(href="/new_client")
+      button.links +

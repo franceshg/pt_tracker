@@ -1,0 +1,31 @@
+extend layout
+
+block main
+  header
+    h2 Editing #{client.name}
+      ul
+        li
+          form.delete(action=`/${client.id}/delete` method="post")
+            button.links(type="submit") Delete Client
+          
+  form(action=`/${client.id}/edit` method="post")
+    dl
+      dt
+        label(for="clientName") Edit Client name: 
+      dd
+        input(type="text"
+              name="clientName"
+              placeholder="Client Name"
+              value=clientName || client.name)
+      dt
+        label(for="clientNotes") Edit Client notes: 
+      dd
+        input(type="text"
+              name="clientNotes"
+              placeholder="Client Notes"
+              value=clientNotes || client.notes)
+    fieldset.actions
+      input(type="submit" value="Save")
+      a(class="action" href=`/${client.id}`) Cancel
+          
+

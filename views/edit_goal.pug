@@ -1,0 +1,30 @@
+extend layout
+
+block main
+  header#edit_goal
+    h2 Edit Goal: #{goal.title}
+  
+  form.delete(action=`/${client.id}/${goal.id}/delete` method="post")
+    button.links(type="submit") Delete Goal
+      
+  form(action=`/${client.id}/${goal.id}/edit` method="post")
+    dl
+      dt
+        label(for="goalName") Edit Title: 
+      dd
+        input(type="text"
+              name="goalName"
+              placeholder="Goal Name"
+              value=newGoal || goal.title)
+      dt
+        label(for="goalNotes") Edit Notes:
+      dd
+        input(type="text"
+              name="goalNotes"
+              placeholder="Goal Notes"
+              value=goalNotes || goal.notes)
+              
+    fieldset.actions
+      input(type="submit" value="Save")
+
+    a(class="action" href=`/${client.id}`) Cancel
